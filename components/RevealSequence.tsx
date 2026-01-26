@@ -158,11 +158,11 @@ export default function RevealSequence() {
   return (
     <div ref={containerRef} className="h-[500vh] relative bg-black">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-         {!isLoaded && (
+         {/* {!isLoaded && (
            <div className="absolute inset-0 flex items-center justify-center text-white/20 uppercase tracking-widest text-sm animate-pulse font-mono">
              [SYS.INIT] Loading Sequence...
            </div>
-         )}
+         )} */}
          <canvas ref={canvasRef} className="block w-full h-full object-cover" />
          
          <TextOverlay text="DESIGN" opacity={text1Opacity} y={text1Y} />
