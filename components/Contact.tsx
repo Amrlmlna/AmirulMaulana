@@ -34,19 +34,43 @@ export default function Contact() {
         </div>
 
         {/* Footer Data */}
-        <div className="flex flex-col md:flex-row justify-between items-end border-t border-white/10 pt-12">
-            <div className="flex flex-col gap-4 mb-8 md:mb-0">
-                <span className="font-mono text-xs text-neutral-500 uppercase">Social Links</span>
-                <div className="flex gap-8 font-mono text-sm text-neutral-300">
-                    <a href="#" className="hover:text-white transition-colors">GITHUB</a>
-                    <a href="#" className="hover:text-white transition-colors">LINKEDIN</a>
-                    <a href="#" className="hover:text-white transition-colors">INSTAGRAM</a>
-                    <a href="#" className="hover:text-white transition-colors">TWITTER</a>
+        <div className="flex flex-col gap-24 border-t border-white/10 pt-12">
+            <div className="flex flex-col gap-8 mb-8 md:mb-0 w-full">
+                <span className="font-mono text-xs text-neutral-500 uppercase mb-8 block">[COMMUNICATION_CHANNELS]</span>
+                <div className="flex flex-col gap-2">
+                    {[
+                        { name: "GITHUB", url: "https://github.com/Amrlmlna", status: "ONLINE", id: "01" },
+                        { name: "LINKEDIN", url: "https://www.linkedin.com/in/amirul-maulana", status: "CONNECT", id: "02" },
+                        { name: "INSTAGRAM", url: "https://www.instagram.com/lnaaa_m/", status: "DM_OPEN", id: "03" },
+                        { name: "EMAIL", url: "mailto:amirulmumba@gmail.com", status: "ENCRYPTED", id: "04" }
+                    ].map((social) => (
+                        <a 
+                            key={social.name}
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative border-t border-white/20 py-8 md:py-12 flex justify-between items-baseline hover:bg-white hover:text-black transition-all duration-300 px-4 md:px-8"
+                        >
+                            <span className="font-mono text-xs md:text-sm text-neutral-500 group-hover:text-neutral-600 transition-colors">/{social.id}</span>
+                            
+                            <span className="text-4xl md:text-8xl font-bold tracking-tighter group-hover:translate-x-4 transition-transform duration-300">
+                                {social.name}
+                            </span>
+
+                            <div className="hidden md:flex items-center gap-4 font-mono text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span>[{social.status}]</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="-rotate-45">
+                                    <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                                    <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                                </svg>
+                            </div>
+                        </a>
+                    ))}
                 </div>
             </div>
 
              <div className="text-right font-mono text-[10px] text-neutral-600 uppercase">
-                 <p>LOCATION: JAKARTA, ID</p>
+                 <p>LOCATION: Palu, Sulawesi Tengah</p>
                  <p>LOCAL_TIME: {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Jakarta' })}</p>
                  <p className="mt-4">© 2024 AMIRUL MAULANA. ALL RIGHTS RESERVED.</p>
              </div>

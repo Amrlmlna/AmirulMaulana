@@ -8,12 +8,24 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <main className="bg-black min-h-screen">
-      <Hero />
+      <section id="home">
+        <Hero />
+      </section>
+      
       <RevealSequence />
-      <WorkSection />
-      <TechStack />
-      <Credentials />
-      <Contact />
+      
+      <section id="about">
+        <TechStack />
+        <Credentials />
+      </section>
+
+      <section id="work">
+        <WorkSection />
+      </section>
+      
+      <section id="contact">
+        <Contact />
+      </section>
     </main>
   );
 }

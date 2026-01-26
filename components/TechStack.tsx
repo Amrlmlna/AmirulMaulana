@@ -4,81 +4,74 @@ import { motion } from "framer-motion";
 
 export default function TechStack() {
   const stack = [
-    { category: "FRONTEND_CORE", items: ["React", "Next.js", "TypeScript", "Tailwind"] },
-    { category: "GRAPHICS_ENGINE", items: ["WebGL", "Three.js", "R3F", "GLSL Shaders"] },
-    { category: "BACKEND_OPS", items: ["Node.js", "PostgreSQL", "Supabase", "Git Workflow"] },
-    { category: "CREATIVE_SUITE", items: ["Figma", "Blender", "Motion Design", "UX Systems"] },
+    { category: "FRONTEND_CORE", items: ["React", "Next.js", "TypeScript", "Tailwind"], status: "ACTIVE" },
+    { category: "MOBILE & IOT", items: ["Flutter", "Dart", "IoT Integration", "MQTT"], status: "SYNCED" },
+    { category: "DESKTOP & SYSTEM", items: ["Electron", "Node.js", "System Arch", "Git"], status: "ONLINE" },
+    { category: "CREATIVE_SUITE", items: ["Figma", "UI/UX", "Motion", "Prototyping"], status: "RENDERING" },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemAnim = {
-    hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0 }
-  };
-
   return (
-    <section className="bg-black py-20 md:py-32 px-4 md:px-12 border-t border-white/10 relative z-10">
-      <div className="max-w-7xl mx-auto">
-         {/* Diagnostics Header */}
-         <div className="flex justify-between items-end mb-16 border-b border-white/10 pb-4">
-            <h2 className="font-mono text-sm text-neutral-500 tracking-widest">[SYSTEM_DIAGNOSTICS]</h2>
-            <div className="flex gap-4 font-mono text-[10px] text-neutral-600">
-                <span>MEM_USAGE: NORMAL</span>
-                <span>CPU: OPTIMIZED</span>
-            </div>
+    <section className="bg-black py-24 md:py-48 px-4 md:px-12 border-t border-white/10 relative z-10 overflow-hidden">
+      
+      {/* Background Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto relative">
+         
+         {/* Ticker Header */}
+         <div className="overflow-hidden border-b border-white/20 pb-8 mb-24">
+             <motion.div 
+                animate={{ x: [0, -1000] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="flex gap-8 whitespace-nowrap font-mono text-xs md:text-sm text-neutral-500"
+             >
+                {Array(10).fill("SYSTEM_MODULES // OPTIMIZED // RUNNING_OPERATIONS // 100%_CAPACITY //").map((txt, i) => (
+                    <span key={i}>{txt}</span>
+                ))}
+             </motion.div>
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+         {/* Grid */}
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {stack.map((group, i) => (
-                <div key={i} className="space-y-6">
-                    <h3 className="font-mono text-xs text-neutral-400 border-l border-white/20 pl-3">
-                        {group.category}
-                    </h3>
-                    <motion.div 
-                        variants={container}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid gap-3"
-                    >
+                <div key={i} className="flex flex-col gap-4">
+                    <div className="flex justify-between items-center font-mono text-[10px] text-neutral-500 border-b border-white/10 pb-2">
+                        <span>0{i+1} // {group.category}</span>
+                        <span className="text-green-500 animate-pulse">[{group.status}]</span>
+                    </div>
+                    
+                    <div className="grid gap-2">
                         {group.items.map((tech, j) => (
                             <motion.div 
                                 key={j}
-                                variants={itemAnim}
-                                className="group relative border border-white/10 bg-neutral-900/50 p-4 hover:bg-white hover:border-white transition-all duration-300 cursor-default"
+                                initial={{ opacity: 0, x: -10 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: (i * 0.1) + (j * 0.05) }}
+                                viewport={{ once: true }}
+                                className="group relative bg-neutral-900/40 border border-white/5 p-4 hover:bg-neutral-800 hover:border-white/40 transition-all duration-300 overflow-hidden"
                             >
-                                <div className="flex justify-between items-center">
-                                    <span className="font-mono text-sm text-neutral-300 group-hover:text-black transition-colors">
+                                <div className="flex justify-between items-center relative z-10">
+                                    <span className="text-lg md:text-xl font-bold text-neutral-400 group-hover:text-white transition-colors tracking-tight">
                                         {tech}
                                     </span>
-                                    {/* Status Dot */}
-                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.5)] group-hover:bg-black transition-colors"></span>
+                                    <span className="font-mono text-[9px] text-neutral-700 group-hover:text-white/50 transition-colors">
+                                        v.{2024}.{j+1}
+                                    </span>
                                 </div>
+
+                                {/* Hover Scanline */}
+                                <div className="absolute inset-0 bg-white/5 md:translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
                                 
-                                {/* Corner Decor */}
-                                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/30 group-hover:border-black/30 transition-colors"></div>
-                                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/30 group-hover:border-black/30 transition-colors"></div>
+                                {/* Corner Accents */}
+                                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/10 group-hover:border-white transition-colors"></div>
+                                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/10 group-hover:border-white transition-colors"></div>
                             </motion.div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             ))}
          </div>
          
-         {/* Footer Bar */}
-         <div className="mt-16 flex justify-between font-mono text-[10px] text-neutral-700 uppercase tracking-widest border-t border-white/5 pt-4">
-             <span>ALL MODULES OPERATIONAL</span>
-             <span>LAST UPDATE: 2024</span>
-         </div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import Navigation from "@/components/Navigation";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.variable}>
       <body className="antialiased bg-black text-white selection:bg-white selection:text-black">
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <Navigation />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

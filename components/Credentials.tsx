@@ -5,29 +5,23 @@ import { useState } from "react";
 
 const education = [
   {
-    institution: "University of Technology",
-    degree: "B.S. Computer Science",
-    year: "2020 — 2024",
-    location: "Jakarta, Indonesia",
-  },
-  {
-    institution: "Design Institute",
-    degree: "Diploma in Visual Arts",
-    year: "2018 — 2020",
-    location: "Bandung, Indonesia",
+    institution: "Universitas Tadulako",
+    degree: "S1 Teknik Informatika",
+    year: "2023 — Present",
+    location: "Palu, Indonesia",
   },
 ];
 
 const certifications = [
   {
     issuer: "Google Cloud",
-    name: "Professional Cloud Architect",
+    name: "Google UX Design Professional Certificate",
     year: "2023",
     link: "/cert/Google-cert.pdf",
   },
   {
     issuer: "Meta",
-    name: "Advanced React Certification",
+    name: "Meta Full Stack Developer Professional Certificate",
     year: "2023",
     link: "/cert/Meta-cert.pdf",
   },
@@ -39,7 +33,7 @@ const certifications = [
   },
   {
     issuer: "Codecademy",
-    name: "Front-End Engineer Career Path",
+    name: "Cloud Computing Basics",
     year: "2022",
     link: "/cert/CodeCademy1.pdf",
   },
