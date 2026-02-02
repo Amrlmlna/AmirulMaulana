@@ -11,6 +11,7 @@ export type Project = {
   images: string[];
   githubUrl?: string;
   downloadUrl?: string; // For APKs or Installers
+  liveUrl?: string; // For live websites
 };
 
 export const projects: Project[] = [
@@ -66,5 +67,19 @@ export const projects: Project[] = [
     challenge: "Maintaining stable connections with low-power microcontroller devices in remote areas.",
     solution: "Built a resilient MQTT broker architecture with offline-first data caching in the mobile app.",
     images: ["/Nirmala.png"],
+  },
+  {
+    id: "05",
+    slug: "Bahontobungku",
+    title: "BAHONTOBUNGKU",
+    category: "Goverment Web",
+    stack: "React, Tailwind, Node.js, MySQL",
+    year: "2023",
+    description: "The official digital portal for Bahontobungku Village, designed to streamline public services and enhance government transparency. This platform serves as a central hub for administrative updates, tourism promotion, and community resources, bridging the gap between local leadership and residents.",
+    challenge: "Overcoming the lack of digital infrastructure to provide centralized information and efficient public services for the community.",
+    solution: "Developed a responsive full-stack web platform with a dynamic content management system, digitizing village records and enabling transparent communication between the government and citizens.",
+    images: ["/Nirmala.png"],
+    githubUrl: "https://github.com/RasyaRahmatSyaban/project-desa/graphs/contributors",
+    liveUrl: "https://bahontobungku.cloud/",
   },
 ];
