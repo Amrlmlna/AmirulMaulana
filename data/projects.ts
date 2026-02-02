@@ -65,6 +65,6 @@ export const projects: Project[] = [
     description: "An integrated IoT mobile application for smart village monitoring. 'Nirmala' connects sensors and control modules for real-time environmental tracking.",
     challenge: "Maintaining stable connections with low-power microcontroller devices in remote areas.",
     solution: "Built a resilient MQTT broker architecture with offline-first data caching in the mobile app.",
-    images: ["/placeholder/nirmala-1.jpg"],
+    images: ["/Nirmala.png"],
   },
 ];
