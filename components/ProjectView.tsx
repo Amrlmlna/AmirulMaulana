@@ -21,7 +21,7 @@ export default function ProjectView({ project, nextProject }: { project: Project
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.8, ease: "easeOut" }}
-               className="font-mono text-neutral-500 mb-8 flex justify-between text-xs md:text-base"
+               className="font-outfit text-neutral-500 mb-8 flex justify-between text-xs md:text-base"
              >
                 <span>PROJECT_ID: {project.id}</span>
                 <span>{project.year}</span>
@@ -72,13 +72,28 @@ export default function ProjectView({ project, nextProject }: { project: Project
             )}
 
             {/* Main Visual Placeholder */}
+            {/* Main Visual */}
             <motion.div 
                initial={{ opacity: 0, scale: 0.95 }}
                animate={{ opacity: 1, scale: 1 }}
                transition={{ duration: 1, delay: 0.5, ease: "circOut" }}
-               className="w-full aspect-video bg-neutral-900 rounded-lg animate-pulse flex items-center justify-center border border-white/10"
+               className="w-full aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-white/10 relative"
             >
-                <span className="font-mono text-neutral-600">VISUAL_ASSET_LOADING</span>
+                {project.images && project.images.length > 0 ? (
+                    <div className="relative w-full h-full">
+                         {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img 
+                            src={project.images[0]} 
+                            alt={project.title}
+                            className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
+                        />
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+                    </div>
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center animate-pulse">
+                        <span className="font-mono text-neutral-600">VISUAL_ASSET_LOADING</span>
+                    </div>
+                )}
             </motion.div>
          </div>
       </section>

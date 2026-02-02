@@ -51,7 +51,7 @@ export const projects: Project[] = [
     description: "A privacy-first, local AI app builder. It runs entirely on the user's machine, allowing for secure, offline AI development similar to Lovable or v0 but private.",
     challenge: "Orchestrating local model inference without blocking the UI thread.",
     solution: "Offloaded inference to background worker threads and optimized IPC communication in Electron.",
-    images: ["/placeholder/ternary-1.jpg"],
+    images: ["/Ternary.png"],
     githubUrl: "https://github.com/TernaryStudio/Ternary",
     downloadUrl: "https://ternary-pre-domain.vercel.app/",
   },
