@@ -78,7 +78,7 @@ export const projects: Project[] = [
     description: "The official digital portal for Bahontobungku Village, designed to streamline public services and enhance government transparency. This platform serves as a central hub for administrative updates, tourism promotion, and community resources, bridging the gap between local leadership and residents.",
     challenge: "Overcoming the lack of digital infrastructure to provide centralized information and efficient public services for the community.",
     solution: "Developed a responsive full-stack web platform with a dynamic content management system, digitizing village records and enabling transparent communication between the government and citizens.",
-    images: ["/Nirmala.png"],
+    images: ["/Bahontobungku.png"],
     githubUrl: "https://github.com/RasyaRahmatSyaban/project-desa/graphs/contributors",
     liveUrl: "https://bahontobungku.cloud/",
   },
