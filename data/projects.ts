@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description: "An AI-powered mobile application that generates professional, ATS-friendly resumes tailored to specific job descriptions. Built with Flutter for seamless cross-platform performance.",
     challenge: "Parsing unstructured job descriptions and mapping them to user experiences with high accuracy.",
     solution: "Fine-tuned LLM prompts and a robust PDF generation engine built natively in Dart.",
-    images: ["/placeholder/cv-master-1.jpg"],
+    images: ["/CV-FAST.png"],
     githubUrl: "https://github.com/Amrlmlna/cv-master",
     // downloadUrl: "https://github.com/Amrlmlna/cv-master/releases/download/v1.0.0/app-release.apk",
   },
