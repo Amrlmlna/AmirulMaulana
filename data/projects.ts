@@ -67,6 +67,7 @@ export const projects: Project[] = [
     challenge: "Maintaining stable connections with low-power microcontroller devices in remote areas.",
     solution: "Built a resilient MQTT broker architecture with offline-first data caching in the mobile app.",
     images: ["/Nirmala.png"],
+    githubUrl: "https://github.com/Amrlmlna/nirmala.git",
   },
   {
     id: "05",
