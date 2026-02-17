@@ -17,8 +17,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "01",
-    slug: "cv-master",
-    title: "CV MASTER",
+    slug: "clever",
+    title: "Clever",
     category: "Mobile AI Platform",
     stack: "Flutter, Dart, OpenAI API",
     year: "2024",
@@ -26,7 +26,8 @@ export const projects: Project[] = [
     challenge: "Parsing unstructured job descriptions and mapping them to user experiences with high accuracy.",
     solution: "Fine-tuned LLM prompts and a robust PDF generation engine built natively in Dart.",
     images: ["/CV-FAST.png"],
-    githubUrl: "https://github.com/Amrlmlna/cv-master",
+    githubUrl: "https://github.com/Amrlmlna/CleVer",
+    liveUrl: "https://clever-fast.vercel.app/",
     // downloadUrl: "https://github.com/Amrlmlna/cv-master/releases/download/v1.0.0/app-release.apk",
   },
   {
