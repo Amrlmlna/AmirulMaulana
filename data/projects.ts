@@ -55,6 +55,7 @@ export const projects: Project[] = [
     solution: "Offloaded inference to background worker threads and optimized IPC communication in Electron.",
     images: ["/Ternary.png"],
     githubUrl: "https://github.com/TernaryStudio/Ternary",
+    liveUrl: "https://ternary-pre-domain.vercel.app/",
     downloadUrl: "https://ternary-pre-domain.vercel.app/",
   },
   {
