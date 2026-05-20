@@ -27,7 +27,7 @@ export const projects: Project[] = [
     solution: "Fine-tuned LLM prompts and a robust PDF generation engine built natively in Dart.",
     images: ["/CV-FAST.png"],
     githubUrl: "https://github.com/Amrlmlna/CleVer",
-    liveUrl: "https://clever-fast.vercel.app/",
+    liveUrl: "https://clevercv.site/",
     // downloadUrl: "https://github.com/Amrlmlna/cv-master/releases/download/v1.0.0/app-release.apk",
   },
   {
